@@ -300,7 +300,7 @@ def generate_train_trial_keys(data_spk2utt_list, xvector_scp_list, train_and_val
 
     for i, d in enumerate(data_spk2utt_list):
         # print("In for loop get train dataset")
-        same_train_list, same_valid_list = make_same_speaker_list(d, xvector_scp_combined, xvector_scp_list, n_repeats = num_repeats_list[i], train_and_valid=True, train_ratio=0.95)
+        same_train_list, same_valid_list = make_same_speaker_list(d, xvector_scp_combined, n_repeats = num_repeats_list[i], train_and_valid=True, train_ratio=0.95)
         diff_train_list, diff_valid_list = make_diff_speaker_list(d, xvector_scp_combined, n_repeats = num_repeats_list[i], train_and_valid=True, train_ratio=0.95)
         # bp()
         zeros = np.zeros((diff_train_list.shape[0], 1)).astype(int)
