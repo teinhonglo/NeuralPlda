@@ -47,7 +47,7 @@ if __name__=='__main__':
              '{}/xvectors_mx6/xvector_fullpaths.scp'.format(xvectors_base_path)])
     
     
-        train_trial_keys, val_trial_keys = generate_train_trial_keys(data_spk2utt_list, xvector_scp_list, batch_size=4096, train_and_valid=True, train_ratio=0.95)
+        train_trial_keys, val_trial_keys = generate_train_trial_keys(data_spk2utt_list, xvector_scp_list, train_and_valid=True, train_ratio=0.95)
         
         # Save the training and validation trials and keys for training NPLDA and other discriminative models
         np.savetxt('trials_and_keys/swbd_sre04to10_mx6_train_trial_keys.tsv', train_trial_keys, fmt='%s', delimiter='\t', comments='none')
